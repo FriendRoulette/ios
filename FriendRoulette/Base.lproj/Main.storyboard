@@ -35,20 +35,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f7O-b7-2Zf">
-                                <rect key="frame" x="49" y="493" width="223" height="55"/>
+                                <rect key="frame" x="45" y="448" width="231" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <state key="normal" title="Roll the Dice">
+                                <state key="normal" title="Find Someone">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="fnl-Sq-Gp3" kind="push" id="8x1-4K-kYK"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="TL5-BH-50s">
+                                <rect key="frame" x="142" y="345" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="SrY-Tf-dHt"/>
+                    <connections>
+                        <outlet property="spinner" destination="TL5-BH-50s" id="hT2-k2-jcE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9EE-TX-EgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,16 +69,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" id="ClZ-7f-7j9">
-                                <rect key="frame" x="0.0" y="538" width="320" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="ClZ-7f-7j9">
+                                <rect key="frame" x="10" y="524" width="300" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                                <connections>
+                                    <action selector="sendPressed:" destination="fnl-Sq-Gp3" eventType="editingDidEnd" id="J9f-U5-r0q"/>
+                                </connections>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MYf-Qz-0wf">
-                                <rect key="frame" x="0.0" y="63" width="320" height="476"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="31" sectionHeaderHeight="22" sectionFooterHeight="22" id="MYf-Qz-0wf">
+                                <rect key="frame" x="0.0" y="63" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SimpleTableItem" rowHeight="31" id="1wc-Jv-e14" customClass="FRChatMessageTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="31"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1wc-Jv-e14" id="32c-MN-gaW">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hG7-dw-00x">
+                                                    <rect key="frame" x="6" y="4" width="25" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" id="wNH-Iz-cdV">
+                                                    <rect key="frame" x="39" y="0.0" width="276" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Hello World">
+                                                            <attributes>
+                                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageTextView" destination="wNH-Iz-cdV" id="XqN-hU-l4x"/>
+                                            <outlet property="speakerLabel" destination="hG7-dw-00x" id="Aer-xo-4iQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="fnl-Sq-Gp3" id="vko-37-9f9"/>
                                     <outlet property="delegate" destination="fnl-Sq-Gp3" id="gZg-HZ-yD7"/>
@@ -84,17 +130,19 @@
                         <barButtonItem key="backBarButtonItem" title="Exit" id="ueh-5B-GW1"/>
                         <barButtonItem key="rightBarButtonItem" title="Test" id="YVM-Mp-a1M">
                             <connections>
-                                <action selector="TestButtonClicked:" destination="fnl-Sq-Gp3" id="qTb-Qt-2YL"/>
+                                <action selector="testButtonTapped:" destination="fnl-Sq-Gp3" id="WgF-Qn-au8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="MYf-Qz-0wf" id="Fhc-Ze-2Dz"/>
+                        <outlet property="InputField" destination="ClZ-7f-7j9" id="DR1-3N-tlR"/>
+                        <outlet property="editText" destination="ClZ-7f-7j9" id="REA-4B-ult"/>
+                        <outlet property="tableView" destination="MYf-Qz-0wf" id="1p4-Dd-pvi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S47-Vv-RcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="283" y="505"/>
+            <point key="canvasLocation" x="184" y="511"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FRLaunchViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end

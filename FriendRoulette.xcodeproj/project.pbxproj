@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		380B8B1218F956CF00015008 /* FRChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B8B1118F956CF00015008 /* FRChatViewController.m */; };
+		3805F49C18F96F0C000F12B4 /* FRChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3805F49B18F96F0C000F12B4 /* FRChatViewController.m */; };
 		380B8B1718F95AFE00015008 /* FRChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B8B1618F95AFE00015008 /* FRChatMessage.m */; };
+		386546EA18F976D5004ACF09 /* FRChatMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386546E918F976D5004ACF09 /* FRChatMessageTableViewCell.m */; };
 		3870C88B18F93F4400E26C88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88A18F93F4400E26C88 /* Foundation.framework */; };
 		3870C88D18F93F4400E26C88 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88C18F93F4400E26C88 /* CoreGraphics.framework */; };
 		3870C88F18F93F4400E26C88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88E18F93F4400E26C88 /* UIKit.framework */; };
@@ -36,10 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		380B8B1018F956CF00015008 /* FRChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRChatViewController.h; path = ../FRChatViewController.h; sourceTree = "<group>"; };
-		380B8B1118F956CF00015008 /* FRChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRChatViewController.m; path = ../FRChatViewController.m; sourceTree = "<group>"; };
+		3805F49A18F96F0C000F12B4 /* FRChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatViewController.h; sourceTree = "<group>"; };
+		3805F49B18F96F0C000F12B4 /* FRChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatViewController.m; sourceTree = "<group>"; };
 		380B8B1518F95AFE00015008 /* FRChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatMessage.h; sourceTree = "<group>"; };
 		380B8B1618F95AFE00015008 /* FRChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatMessage.m; sourceTree = "<group>"; };
+		386546E818F976D5004ACF09 /* FRChatMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatMessageTableViewCell.h; sourceTree = "<group>"; };
+		386546E918F976D5004ACF09 /* FRChatMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatMessageTableViewCell.m; sourceTree = "<group>"; };
 		3870C88718F93F4400E26C88 /* FriendRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3870C88A18F93F4400E26C88 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3870C88C18F93F4400E26C88 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -88,10 +91,10 @@
 		380B8B1318F9575C00015008 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				380B8B1018F956CF00015008 /* FRChatViewController.h */,
-				380B8B1118F956CF00015008 /* FRChatViewController.m */,
 				3870C89F18F93F4400E26C88 /* FRLaunchViewController.h */,
 				3870C8A018F93F4400E26C88 /* FRLaunchViewController.m */,
+				3805F49A18F96F0C000F12B4 /* FRChatViewController.h */,
+				3805F49B18F96F0C000F12B4 /* FRChatViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -99,6 +102,8 @@
 		380B8B1418F9576500015008 /* Actual Classes */ = {
 			isa = PBXGroup;
 			children = (
+				386546E818F976D5004ACF09 /* FRChatMessageTableViewCell.h */,
+				386546E918F976D5004ACF09 /* FRChatMessageTableViewCell.m */,
 				380B8B1518F95AFE00015008 /* FRChatMessage.h */,
 				380B8B1618F95AFE00015008 /* FRChatMessage.m */,
 			);
@@ -276,11 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				380B8B1218F956CF00015008 /* FRChatViewController.m in Sources */,
+				3805F49C18F96F0C000F12B4 /* FRChatViewController.m in Sources */,
 				3870C89B18F93F4400E26C88 /* FRAppDelegate.m in Sources */,
 				3870C89718F93F4400E26C88 /* main.m in Sources */,
 				380B8B1718F95AFE00015008 /* FRChatMessage.m in Sources */,
 				3870C8A118F93F4400E26C88 /* FRLaunchViewController.m in Sources */,
+				386546EA18F976D5004ACF09 /* FRChatMessageTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
