@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3870C88B18F93F4400E26C88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88A18F93F4400E26C88 /* Foundation.framework */; };
+		3870C88D18F93F4400E26C88 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88C18F93F4400E26C88 /* CoreGraphics.framework */; };
+		3870C88F18F93F4400E26C88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88E18F93F4400E26C88 /* UIKit.framework */; };
+		3870C89518F93F4400E26C88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3870C89318F93F4400E26C88 /* InfoPlist.strings */; };
+		3870C89718F93F4400E26C88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3870C89618F93F4400E26C88 /* main.m */; };
+		3870C89B18F93F4400E26C88 /* FRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3870C89A18F93F4400E26C88 /* FRAppDelegate.m */; };
+		3870C89E18F93F4400E26C88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3870C89C18F93F4400E26C88 /* Main.storyboard */; };
+		3870C8A118F93F4400E26C88 /* FRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3870C8A018F93F4400E26C88 /* FRViewController.m */; };
+		3870C8A318F93F4400E26C88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3870C8A218F93F4400E26C88 /* Images.xcassets */; };
+		3870C8AA18F93F4400E26C88 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C8A918F93F4400E26C88 /* XCTest.framework */; };
+		3870C8AB18F93F4400E26C88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88A18F93F4400E26C88 /* Foundation.framework */; };
+		3870C8AC18F93F4400E26C88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88E18F93F4400E26C88 /* UIKit.framework */; };
+		3870C8B418F93F4500E26C88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3870C8B218F93F4500E26C88 /* InfoPlist.strings */; };
+		3870C8B618F93F4500E26C88 /* FriendRouletteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3870C8B518F93F4500E26C88 /* FriendRouletteTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3870C8AD18F93F4400E26C88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3870C87F18F93F4400E26C88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3870C88618F93F4400E26C88;
+			remoteInfo = FriendRoulette;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3870C88718F93F4400E26C88 /* FriendRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3870C88A18F93F4400E26C88 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3870C88C18F93F4400E26C88 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3870C88E18F93F4400E26C88 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3870C89218F93F4400E26C88 /* FriendRoulette-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FriendRoulette-Info.plist"; sourceTree = "<group>"; };
+		3870C89418F93F4400E26C88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3870C89618F93F4400E26C88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3870C89818F93F4400E26C88 /* FriendRoulette-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FriendRoulette-Prefix.pch"; sourceTree = "<group>"; };
+		3870C89918F93F4400E26C88 /* FRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRAppDelegate.h; sourceTree = "<group>"; };
+		3870C89A18F93F4400E26C88 /* FRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRAppDelegate.m; sourceTree = "<group>"; };
+		3870C89D18F93F4400E26C88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3870C89F18F93F4400E26C88 /* FRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRViewController.h; sourceTree = "<group>"; };
+		3870C8A018F93F4400E26C88 /* FRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRViewController.m; sourceTree = "<group>"; };
+		3870C8A218F93F4400E26C88 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3870C8A818F93F4400E26C88 /* FriendRouletteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendRouletteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3870C8A918F93F4400E26C88 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3870C8B118F93F4500E26C88 /* FriendRouletteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FriendRouletteTests-Info.plist"; sourceTree = "<group>"; };
+		3870C8B318F93F4500E26C88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3870C8B518F93F4500E26C88 /* FriendRouletteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendRouletteTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3870C88418F93F4400E26C88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3870C88D18F93F4400E26C88 /* CoreGraphics.framework in Frameworks */,
+				3870C88F18F93F4400E26C88 /* UIKit.framework in Frameworks */,
+				3870C88B18F93F4400E26C88 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3870C8A518F93F4400E26C88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3870C8AA18F93F4400E26C88 /* XCTest.framework in Frameworks */,
+				3870C8AC18F93F4400E26C88 /* UIKit.framework in Frameworks */,
+				3870C8AB18F93F4400E26C88 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3870C87E18F93F4400E26C88 = {
+			isa = PBXGroup;
+			children = (
+				3870C89018F93F4400E26C88 /* FriendRoulette */,
+				3870C8AF18F93F4400E26C88 /* FriendRouletteTests */,
+				3870C88918F93F4400E26C88 /* Frameworks */,
+				3870C88818F93F4400E26C88 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3870C88818F93F4400E26C88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3870C88718F93F4400E26C88 /* FriendRoulette.app */,
+				3870C8A818F93F4400E26C88 /* FriendRouletteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3870C88918F93F4400E26C88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3870C88A18F93F4400E26C88 /* Foundation.framework */,
+				3870C88C18F93F4400E26C88 /* CoreGraphics.framework */,
+				3870C88E18F93F4400E26C88 /* UIKit.framework */,
+				3870C8A918F93F4400E26C88 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3870C89018F93F4400E26C88 /* FriendRoulette */ = {
+			isa = PBXGroup;
+			children = (
+				3870C89918F93F4400E26C88 /* FRAppDelegate.h */,
+				3870C89A18F93F4400E26C88 /* FRAppDelegate.m */,
+				3870C89C18F93F4400E26C88 /* Main.storyboard */,
+				3870C89F18F93F4400E26C88 /* FRViewController.h */,
+				3870C8A018F93F4400E26C88 /* FRViewController.m */,
+				3870C8A218F93F4400E26C88 /* Images.xcassets */,
+				3870C89118F93F4400E26C88 /* Supporting Files */,
+			);
+			path = FriendRoulette;
+			sourceTree = "<group>";
+		};
+		3870C89118F93F4400E26C88 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3870C89218F93F4400E26C88 /* FriendRoulette-Info.plist */,
+				3870C89318F93F4400E26C88 /* InfoPlist.strings */,
+				3870C89618F93F4400E26C88 /* main.m */,
+				3870C89818F93F4400E26C88 /* FriendRoulette-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3870C8AF18F93F4400E26C88 /* FriendRouletteTests */ = {
+			isa = PBXGroup;
+			children = (
+				3870C8B518F93F4500E26C88 /* FriendRouletteTests.m */,
+				3870C8B018F93F4500E26C88 /* Supporting Files */,
+			);
+			path = FriendRouletteTests;
+			sourceTree = "<group>";
+		};
+		3870C8B018F93F4500E26C88 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3870C8B118F93F4500E26C88 /* FriendRouletteTests-Info.plist */,
+				3870C8B218F93F4500E26C88 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3870C88618F93F4400E26C88 /* FriendRoulette */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3870C8B918F93F4500E26C88 /* Build configuration list for PBXNativeTarget "FriendRoulette" */;
+			buildPhases = (
+				3870C88318F93F4400E26C88 /* Sources */,
+				3870C88418F93F4400E26C88 /* Frameworks */,
+				3870C88518F93F4400E26C88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FriendRoulette;
+			productName = FriendRoulette;
+			productReference = 3870C88718F93F4400E26C88 /* FriendRoulette.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3870C8A718F93F4400E26C88 /* FriendRouletteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3870C8BC18F93F4500E26C88 /* Build configuration list for PBXNativeTarget "FriendRouletteTests" */;
+			buildPhases = (
+				3870C8A418F93F4400E26C88 /* Sources */,
+				3870C8A518F93F4400E26C88 /* Frameworks */,
+				3870C8A618F93F4400E26C88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3870C8AE18F93F4400E26C88 /* PBXTargetDependency */,
+			);
+			name = FriendRouletteTests;
+			productName = FriendRouletteTests;
+			productReference = 3870C8A818F93F4400E26C88 /* FriendRouletteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3870C87F18F93F4400E26C88 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FR;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = asskon;
+				TargetAttributes = {
+					3870C8A718F93F4400E26C88 = {
+						TestTargetID = 3870C88618F93F4400E26C88;
+					};
+				};
+			};
+			buildConfigurationList = 3870C88218F93F4400E26C88 /* Build configuration list for PBXProject "FriendRoulette" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3870C87E18F93F4400E26C88;
+			productRefGroup = 3870C88818F93F4400E26C88 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3870C88618F93F4400E26C88 /* FriendRoulette */,
+				3870C8A718F93F4400E26C88 /* FriendRouletteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3870C88518F93F4400E26C88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3870C8A318F93F4400E26C88 /* Images.xcassets in Resources */,
+				3870C89518F93F4400E26C88 /* InfoPlist.strings in Resources */,
+				3870C89E18F93F4400E26C88 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3870C8A618F93F4400E26C88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3870C8B418F93F4500E26C88 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3870C88318F93F4400E26C88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3870C89B18F93F4400E26C88 /* FRAppDelegate.m in Sources */,
+				3870C89718F93F4400E26C88 /* main.m in Sources */,
+				3870C8A118F93F4400E26C88 /* FRViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3870C8A418F93F4400E26C88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3870C8B618F93F4500E26C88 /* FriendRouletteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3870C8AE18F93F4400E26C88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3870C88618F93F4400E26C88 /* FriendRoulette */;
+			targetProxy = 3870C8AD18F93F4400E26C88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3870C89318F93F4400E26C88 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3870C89418F93F4400E26C88 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3870C89C18F93F4400E26C88 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3870C89D18F93F4400E26C88 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3870C8B218F93F4500E26C88 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3870C8B318F93F4500E26C88 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3870C8B718F93F4500E26C88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3870C8B818F93F4500E26C88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3870C8BA18F93F4500E26C88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FriendRoulette/FriendRoulette-Prefix.pch";
+				INFOPLIST_FILE = "FriendRoulette/FriendRoulette-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3870C8BB18F93F4500E26C88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FriendRoulette/FriendRoulette-Prefix.pch";
+				INFOPLIST_FILE = "FriendRoulette/FriendRoulette-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3870C8BD18F93F4500E26C88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FriendRoulette.app/FriendRoulette";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FriendRoulette/FriendRoulette-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FriendRouletteTests/FriendRouletteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3870C8BE18F93F4500E26C88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FriendRoulette.app/FriendRoulette";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FriendRoulette/FriendRoulette-Prefix.pch";
+				INFOPLIST_FILE = "FriendRouletteTests/FriendRouletteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3870C88218F93F4400E26C88 /* Build configuration list for PBXProject "FriendRoulette" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3870C8B718F93F4500E26C88 /* Debug */,
+				3870C8B818F93F4500E26C88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3870C8B918F93F4500E26C88 /* Build configuration list for PBXNativeTarget "FriendRoulette" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3870C8BA18F93F4500E26C88 /* Debug */,
+				3870C8BB18F93F4500E26C88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3870C8BC18F93F4500E26C88 /* Build configuration list for PBXNativeTarget "FriendRouletteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3870C8BD18F93F4500E26C88 /* Debug */,
+				3870C8BE18F93F4500E26C88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3870C87F18F93F4400E26C88 /* Project object */;
+}
