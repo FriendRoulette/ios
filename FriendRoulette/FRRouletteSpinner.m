@@ -36,6 +36,7 @@
     frame.origin = origin;
     image.frame = frame;
     image.opaque = NO;
+    self.opaque = NO;
     [self addSubview:image];
 }
 

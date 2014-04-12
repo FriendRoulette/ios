@@ -27,10 +27,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" id="d01-Yy-8iK">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Roulette" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UKn-tZ-HQT">
                                 <rect key="frame" x="25" y="79" width="271" height="227"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -40,7 +36,7 @@
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f7O-b7-2Zf">
-                                <rect key="frame" x="45" y="486" width="231" height="55"/>
+                                <rect key="frame" x="45" y="439" width="231" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Find Someone">
@@ -55,7 +51,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view opaque="NO" contentMode="scaleToFill" id="odz-ga-ecu" customClass="FRRouletteSpinner">
-                                <rect key="frame" x="132" y="336" width="57" height="55"/>
+                                <rect key="frame" x="132" y="329" width="57" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -70,9 +66,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9EE-TX-EgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="-147"/>
+            <point key="canvasLocation" x="284" y="-164"/>
         </scene>
-        <!--Chat View Controller - Chat-->
+        <!--Chat View Controller - Title-->
         <scene sceneID="ITh-ek-vSN">
             <objects>
                 <viewController id="fnl-Sq-Gp3" customClass="FRChatViewController" sceneMemberID="viewController">
@@ -137,8 +133,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Chat" id="LJe-Ni-7i0">
-                        <barButtonItem key="backBarButtonItem" title="Exit" id="ueh-5B-GW1"/>
+                    <navigationItem key="navigationItem" title="Title" id="L5E-4V-9zb">
+                        <barButtonItem key="leftBarButtonItem" title="Leave" id="ncd-95-jt4"/>
+                        <barButtonItem key="rightBarButtonItem" title="Record" id="p1C-g4-9xm"/>
                     </navigationItem>
                     <connections>
                         <outlet property="editText" destination="ClZ-7f-7j9" id="REA-4B-ult"/>
@@ -147,12 +144,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S47-Vv-RcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="184" y="511"/>
+            <point key="canvasLocation" x="687" y="-164"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logo" width="50" height="50"/>
-        <image name="bg" width="320" height="569"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

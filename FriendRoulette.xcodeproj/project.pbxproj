@@ -24,8 +24,6 @@
 		3870C8AC18F93F4400E26C88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88E18F93F4400E26C88 /* UIKit.framework */; };
 		3870C8B418F93F4500E26C88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3870C8B218F93F4500E26C88 /* InfoPlist.strings */; };
 		3870C8B618F93F4500E26C88 /* FriendRouletteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3870C8B518F93F4500E26C88 /* FriendRouletteTests.m */; };
-		388B3C8918F9D776007404B7 /* roulette.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B3C8718F9D776007404B7 /* roulette.png */; };
-		388B3C8A18F9D776007404B7 /* roulette@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B3C8818F9D776007404B7 /* roulette@2x.png */; };
 		38D8F17518F9CF1A0001C495 /* FRRouletteSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D8F17418F9CF1A0001C495 /* FRRouletteSpinner.m */; };
 /* End PBXBuildFile section */
 
@@ -65,8 +63,6 @@
 		3870C8B118F93F4500E26C88 /* FriendRouletteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FriendRouletteTests-Info.plist"; sourceTree = "<group>"; };
 		3870C8B318F93F4500E26C88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3870C8B518F93F4500E26C88 /* FriendRouletteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendRouletteTests.m; sourceTree = "<group>"; };
-		388B3C8718F9D776007404B7 /* roulette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roulette.png; sourceTree = "<group>"; };
-		388B3C8818F9D776007404B7 /* roulette@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "roulette@2x.png"; sourceTree = "<group>"; };
 		38D8F17318F9CF1A0001C495 /* FRRouletteSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRRouletteSpinner.h; sourceTree = "<group>"; };
 		38D8F17418F9CF1A0001C495 /* FRRouletteSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRRouletteSpinner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,8 +162,6 @@
 		3870C89118F93F4400E26C88 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				388B3C8718F9D776007404B7 /* roulette.png */,
-				388B3C8818F9D776007404B7 /* roulette@2x.png */,
 				3870C89218F93F4400E26C88 /* FriendRoulette-Info.plist */,
 				3870C89318F93F4400E26C88 /* InfoPlist.strings */,
 				3870C89618F93F4400E26C88 /* main.m */,
@@ -242,6 +236,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = asskon;
 				TargetAttributes = {
+					3870C88618F93F4400E26C88 = {
+						DevelopmentTeam = WK69GBX43P;
+					};
 					3870C8A718F93F4400E26C88 = {
 						TestTargetID = 3870C88618F93F4400E26C88;
 					};
@@ -273,9 +270,7 @@
 			files = (
 				3870C8A318F93F4400E26C88 /* Images.xcassets in Resources */,
 				3870C89518F93F4400E26C88 /* InfoPlist.strings in Resources */,
-				388B3C8A18F9D776007404B7 /* roulette@2x.png in Resources */,
 				3870C89E18F93F4400E26C88 /* Main.storyboard in Resources */,
-				388B3C8918F9D776007404B7 /* roulette.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,10 +420,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FriendRoulette/FriendRoulette-Prefix.pch";
 				INFOPLIST_FILE = "FriendRoulette/FriendRoulette-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -438,10 +436,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FriendRoulette/FriendRoulette-Prefix.pch";
 				INFOPLIST_FILE = "FriendRoulette/FriendRoulette-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
