@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380B8B1218F956CF00015008 /* FRChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B8B1118F956CF00015008 /* FRChatViewController.m */; };
+		380B8B1718F95AFE00015008 /* FRChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B8B1618F95AFE00015008 /* FRChatMessage.m */; };
 		3870C88B18F93F4400E26C88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88A18F93F4400E26C88 /* Foundation.framework */; };
 		3870C88D18F93F4400E26C88 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88C18F93F4400E26C88 /* CoreGraphics.framework */; };
 		3870C88F18F93F4400E26C88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88E18F93F4400E26C88 /* UIKit.framework */; };
@@ -14,7 +16,7 @@
 		3870C89718F93F4400E26C88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3870C89618F93F4400E26C88 /* main.m */; };
 		3870C89B18F93F4400E26C88 /* FRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3870C89A18F93F4400E26C88 /* FRAppDelegate.m */; };
 		3870C89E18F93F4400E26C88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3870C89C18F93F4400E26C88 /* Main.storyboard */; };
-		3870C8A118F93F4400E26C88 /* FRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3870C8A018F93F4400E26C88 /* FRViewController.m */; };
+		3870C8A118F93F4400E26C88 /* FRLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3870C8A018F93F4400E26C88 /* FRLaunchViewController.m */; };
 		3870C8A318F93F4400E26C88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3870C8A218F93F4400E26C88 /* Images.xcassets */; };
 		3870C8AA18F93F4400E26C88 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C8A918F93F4400E26C88 /* XCTest.framework */; };
 		3870C8AB18F93F4400E26C88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88A18F93F4400E26C88 /* Foundation.framework */; };
@@ -34,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		380B8B1018F956CF00015008 /* FRChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRChatViewController.h; path = ../FRChatViewController.h; sourceTree = "<group>"; };
+		380B8B1118F956CF00015008 /* FRChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRChatViewController.m; path = ../FRChatViewController.m; sourceTree = "<group>"; };
+		380B8B1518F95AFE00015008 /* FRChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatMessage.h; sourceTree = "<group>"; };
+		380B8B1618F95AFE00015008 /* FRChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatMessage.m; sourceTree = "<group>"; };
 		3870C88718F93F4400E26C88 /* FriendRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3870C88A18F93F4400E26C88 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3870C88C18F93F4400E26C88 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,8 +51,8 @@
 		3870C89918F93F4400E26C88 /* FRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRAppDelegate.h; sourceTree = "<group>"; };
 		3870C89A18F93F4400E26C88 /* FRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRAppDelegate.m; sourceTree = "<group>"; };
 		3870C89D18F93F4400E26C88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3870C89F18F93F4400E26C88 /* FRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRViewController.h; sourceTree = "<group>"; };
-		3870C8A018F93F4400E26C88 /* FRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRViewController.m; sourceTree = "<group>"; };
+		3870C89F18F93F4400E26C88 /* FRLaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRLaunchViewController.h; sourceTree = "<group>"; };
+		3870C8A018F93F4400E26C88 /* FRLaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRLaunchViewController.m; sourceTree = "<group>"; };
 		3870C8A218F93F4400E26C88 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3870C8A818F93F4400E26C88 /* FriendRouletteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendRouletteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3870C8A918F93F4400E26C88 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -79,6 +85,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		380B8B1318F9575C00015008 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				380B8B1018F956CF00015008 /* FRChatViewController.h */,
+				380B8B1118F956CF00015008 /* FRChatViewController.m */,
+				3870C89F18F93F4400E26C88 /* FRLaunchViewController.h */,
+				3870C8A018F93F4400E26C88 /* FRLaunchViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		380B8B1418F9576500015008 /* Actual Classes */ = {
+			isa = PBXGroup;
+			children = (
+				380B8B1518F95AFE00015008 /* FRChatMessage.h */,
+				380B8B1618F95AFE00015008 /* FRChatMessage.m */,
+			);
+			name = "Actual Classes";
+			sourceTree = "<group>";
+		};
 		3870C87E18F93F4400E26C88 = {
 			isa = PBXGroup;
 			children = (
@@ -112,11 +138,11 @@
 		3870C89018F93F4400E26C88 /* FriendRoulette */ = {
 			isa = PBXGroup;
 			children = (
+				380B8B1418F9576500015008 /* Actual Classes */,
+				380B8B1318F9575C00015008 /* ViewControllers */,
 				3870C89918F93F4400E26C88 /* FRAppDelegate.h */,
 				3870C89A18F93F4400E26C88 /* FRAppDelegate.m */,
 				3870C89C18F93F4400E26C88 /* Main.storyboard */,
-				3870C89F18F93F4400E26C88 /* FRViewController.h */,
-				3870C8A018F93F4400E26C88 /* FRViewController.m */,
 				3870C8A218F93F4400E26C88 /* Images.xcassets */,
 				3870C89118F93F4400E26C88 /* Supporting Files */,
 			);
@@ -250,9 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				380B8B1218F956CF00015008 /* FRChatViewController.m in Sources */,
 				3870C89B18F93F4400E26C88 /* FRAppDelegate.m in Sources */,
 				3870C89718F93F4400E26C88 /* main.m in Sources */,
-				3870C8A118F93F4400E26C88 /* FRViewController.m in Sources */,
+				380B8B1718F95AFE00015008 /* FRChatMessage.m in Sources */,
+				3870C8A118F93F4400E26C88 /* FRLaunchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +485,7 @@
 				3870C8BB18F93F4500E26C88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3870C8BC18F93F4500E26C88 /* Build configuration list for PBXNativeTarget "FriendRouletteTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +494,7 @@
 				3870C8BE18F93F4500E26C88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

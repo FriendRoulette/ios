@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FRViewController : UIViewController
+@interface FRLaunchViewController : UIViewController
 
 @end

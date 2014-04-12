@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 asskon. All rights reserved.
 //
 
-#import "FRViewController.h"
+#import "FRLaunchViewController.h"
 
-@interface FRViewController ()
+@interface FRLaunchViewController ()
 
 @end
 
-@implementation FRViewController
+@implementation FRLaunchViewController
 
 - (void)viewDidLoad
 {
