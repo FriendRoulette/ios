@@ -24,6 +24,9 @@
 		3870C8AC18F93F4400E26C88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88E18F93F4400E26C88 /* UIKit.framework */; };
 		3870C8B418F93F4500E26C88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3870C8B218F93F4500E26C88 /* InfoPlist.strings */; };
 		3870C8B618F93F4500E26C88 /* FriendRouletteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3870C8B518F93F4500E26C88 /* FriendRouletteTests.m */; };
+		388B3C8918F9D776007404B7 /* roulette.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B3C8718F9D776007404B7 /* roulette.png */; };
+		388B3C8A18F9D776007404B7 /* roulette@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B3C8818F9D776007404B7 /* roulette@2x.png */; };
+		38D8F17518F9CF1A0001C495 /* FRRouletteSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D8F17418F9CF1A0001C495 /* FRRouletteSpinner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,10 @@
 		3870C8B118F93F4500E26C88 /* FriendRouletteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FriendRouletteTests-Info.plist"; sourceTree = "<group>"; };
 		3870C8B318F93F4500E26C88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3870C8B518F93F4500E26C88 /* FriendRouletteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendRouletteTests.m; sourceTree = "<group>"; };
+		388B3C8718F9D776007404B7 /* roulette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roulette.png; sourceTree = "<group>"; };
+		388B3C8818F9D776007404B7 /* roulette@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "roulette@2x.png"; sourceTree = "<group>"; };
+		38D8F17318F9CF1A0001C495 /* FRRouletteSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRRouletteSpinner.h; sourceTree = "<group>"; };
+		38D8F17418F9CF1A0001C495 /* FRRouletteSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRRouletteSpinner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +113,8 @@
 				386546E918F976D5004ACF09 /* FRChatMessageTableViewCell.m */,
 				380B8B1518F95AFE00015008 /* FRChatMessage.h */,
 				380B8B1618F95AFE00015008 /* FRChatMessage.m */,
+				38D8F17318F9CF1A0001C495 /* FRRouletteSpinner.h */,
+				38D8F17418F9CF1A0001C495 /* FRRouletteSpinner.m */,
 			);
 			name = "Actual Classes";
 			sourceTree = "<group>";
@@ -157,6 +166,8 @@
 		3870C89118F93F4400E26C88 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				388B3C8718F9D776007404B7 /* roulette.png */,
+				388B3C8818F9D776007404B7 /* roulette@2x.png */,
 				3870C89218F93F4400E26C88 /* FriendRoulette-Info.plist */,
 				3870C89318F93F4400E26C88 /* InfoPlist.strings */,
 				3870C89618F93F4400E26C88 /* main.m */,
@@ -262,7 +273,9 @@
 			files = (
 				3870C8A318F93F4400E26C88 /* Images.xcassets in Resources */,
 				3870C89518F93F4400E26C88 /* InfoPlist.strings in Resources */,
+				388B3C8A18F9D776007404B7 /* roulette@2x.png in Resources */,
 				3870C89E18F93F4400E26C88 /* Main.storyboard in Resources */,
+				388B3C8918F9D776007404B7 /* roulette.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +298,7 @@
 				3870C89B18F93F4400E26C88 /* FRAppDelegate.m in Sources */,
 				3870C89718F93F4400E26C88 /* main.m in Sources */,
 				380B8B1718F95AFE00015008 /* FRChatMessage.m in Sources */,
+				38D8F17518F9CF1A0001C495 /* FRRouletteSpinner.m in Sources */,
 				3870C8A118F93F4400E26C88 /* FRLaunchViewController.m in Sources */,
 				386546EA18F976D5004ACF09 /* FRChatMessageTableViewCell.m in Sources */,
 			);

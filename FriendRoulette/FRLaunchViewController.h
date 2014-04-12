@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FRRouletteSpinner.h"
 
 @interface FRLaunchViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet FRRouletteSpinner *spinner;
+
+- (IBAction)findSomeone:(id)sender;
 
 @end

@@ -27,41 +27,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Roulette" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UKn-tZ-HQT">
-                                <rect key="frame" x="25" y="75" width="271" height="227"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" id="d01-Yy-8iK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Roulette" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UKn-tZ-HQT">
+                                <rect key="frame" x="25" y="79" width="271" height="227"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f7O-b7-2Zf">
-                                <rect key="frame" x="45" y="448" width="231" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="45" y="486" width="231" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Find Someone">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fnl-Sq-Gp3" kind="push" id="8x1-4K-kYK"/>
+                                    <action selector="findSomeone:" destination="1Sa-Fx-r6c" eventType="touchUpInside" id="DJl-oT-rDk"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="TL5-BH-50s">
-                                <rect key="frame" x="142" y="345" width="37" height="37"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" id="JCq-AB-q7d">
+                                <rect key="frame" x="20" y="114" width="72" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
+                            </imageView>
+                            <view opaque="NO" contentMode="scaleToFill" id="odz-ga-ecu" customClass="FRRouletteSpinner">
+                                <rect key="frame" x="132" y="336" width="57" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="SrY-Tf-dHt"/>
                     <connections>
-                        <outlet property="spinner" destination="TL5-BH-50s" id="hT2-k2-jcE"/>
+                        <outlet property="spinner" destination="odz-ga-ecu" id="bFj-CF-8ep"/>
+                        <segue destination="fnl-Sq-Gp3" kind="push" identifier="toChat" id="oy5-WX-06t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9EE-TX-EgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266" y="-159"/>
+            <point key="canvasLocation" x="234" y="-147"/>
         </scene>
-        <!--Chat View Controller - Chat With Them-->
+        <!--Chat View Controller - Chat-->
         <scene sceneID="ITh-ek-vSN">
             <objects>
                 <viewController id="fnl-Sq-Gp3" customClass="FRChatViewController" sceneMemberID="viewController">
@@ -75,7 +86,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="send"/>
                                 <connections>
-                                    <action selector="sendPressed:" destination="fnl-Sq-Gp3" eventType="editingDidEnd" id="J9f-U5-r0q"/>
+                                    <action selector="sendButtonPressed:" destination="fnl-Sq-Gp3" eventType="editingDidEndOnExit" id="HkP-10-CRM"/>
                                 </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="31" sectionHeaderHeight="22" sectionFooterHeight="22" id="MYf-Qz-0wf">
@@ -126,16 +137,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Chat With Them" id="LJe-Ni-7i0">
+                    <navigationItem key="navigationItem" title="Chat" id="LJe-Ni-7i0">
                         <barButtonItem key="backBarButtonItem" title="Exit" id="ueh-5B-GW1"/>
-                        <barButtonItem key="rightBarButtonItem" title="Test" id="YVM-Mp-a1M">
-                            <connections>
-                                <action selector="testButtonTapped:" destination="fnl-Sq-Gp3" id="WgF-Qn-au8"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="InputField" destination="ClZ-7f-7j9" id="DR1-3N-tlR"/>
                         <outlet property="editText" destination="ClZ-7f-7j9" id="REA-4B-ult"/>
                         <outlet property="tableView" destination="MYf-Qz-0wf" id="1p4-Dd-pvi"/>
                     </connections>
@@ -145,6 +150,10 @@
             <point key="canvasLocation" x="184" y="511"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="50" height="50"/>
+        <image name="bg" width="320" height="569"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

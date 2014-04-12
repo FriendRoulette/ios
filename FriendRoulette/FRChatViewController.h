@@ -16,10 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *editText;
 
+- (IBAction)sendButtonPressed:(UITextField *)sender;
 - (void)sendMessage:(NSString *)message;
-- (IBAction)sendPressed:(id)sender;
-- (IBAction)testButtonTapped:(UIBarButtonItem *)sender;
-@property (weak, nonatomic) IBOutlet UITextField *InputField;
 
 
 @end

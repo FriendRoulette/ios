@@ -54,18 +54,18 @@
     CGSize size = newTableFrame.size;
     size.height -= (keyboardSize.height);
     newTableFrame.size = size;
-    CGRect newInputFrame = self.InputField.frame;
+    CGRect newInputFrame = self.editText.frame;
     CGPoint point = newInputFrame.origin;
     point.y -= keyboardSize.height;
     newInputFrame.origin = point;
-    self.InputField.frame = newInputFrame;
+    self.editText.frame = newInputFrame;
     //Here make adjustments to the tableview frame based on the value in keyboard size
     
     self.tableView.frame = newTableFrame;
 }
 
 -(void)dismissKeyboard {
-    [self.InputField resignFirstResponder];
+    [self.editText resignFirstResponder];
 }
 
 
@@ -77,25 +77,27 @@
     CGSize size = newTableFrame.size;
     size.height += (keyboardSize.height);
     newTableFrame.size = size;
-    CGRect newInputFrame = self.InputField.frame;
+    CGRect newInputFrame = self.editText.frame;
     CGPoint point = newInputFrame.origin;
     point.y += keyboardSize.height;
     newInputFrame.origin = point;
-    self.InputField.frame = newInputFrame;
+    self.editText.frame = newInputFrame;
     //Here make adjustments to the tableview frame based on the value in keyboard size
     
     self.tableView.frame = newTableFrame;
 }
 
-- (IBAction)sendPressed:(id)sender {
-    FRChatMessage *chatMessage = [FRChatMessage messageWithUser:@"Me" message:self.editText.text];
-    [self.chatMessages addObject:chatMessage];
-    [self.tableView reloadData];
+- (IBAction)sendButtonPressed:(UITextField *)sender {
+    [self sendMessage:self.editText.text];
+    self.editText.text = @"";
 }
 
-- (IBAction) testButtonTapped:(UIBarButtonItem *)sender {
-    
-    
+- (void)sendMessage:(NSString *)message {
+    if ([message compare:@""] != NSOrderedSame) {
+        FRChatMessage *chatMessage = [FRChatMessage messageWithUser:@"Me" message:message];
+        [self.chatMessages addObject:chatMessage];
+        [self.tableView reloadData];
+    }
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

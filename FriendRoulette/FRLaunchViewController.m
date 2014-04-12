@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.spinner initialize];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,4 +27,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)findSomeone:(id)sender {
+    [self.spinner start];
+}
 @end
