@@ -178,6 +178,11 @@
                                                                                                               
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    Firebase *fireBase = [[Firebase alloc]initWithUrl:[NSString stringWithFormat:@"%@room%d", FIREBASE_BASE_URL, self.roomID]];
+    [fireBase removeValue];
+}
+
 /*
 #pragma mark - Navigation
 

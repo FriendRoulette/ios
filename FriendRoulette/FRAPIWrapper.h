@@ -11,13 +11,13 @@
 #import <Accounts/Accounts.h>
 #import <Firebase/Firebase.h>
 
-@interface FRAPIWrapper : NSObject <NSURLConnectionDataDelegate>
+@interface FRAPIWrapper : NSObject
 
 @property (strong, nonatomic) NSMutableURLRequest *urlRequest;
 @property (strong, nonatomic) NSMutableData *responseData;
-@property (nonatomic, copy) void (^response)(int roomID);
+@property (nonatomic, copy) void (^response)(NSString *roomID);
 
-- (void)enterQueueWithResponseListener:(void (^)(int roomID))r;
+- (void)enterQueueWithResponseListener:(void (^)(NSString *roomID))r;
 
 - (void) sendRequestWithToken: (NSString *) token;
 

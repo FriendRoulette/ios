@@ -33,7 +33,7 @@
 
 - (IBAction)findSomeone:(id)sender {
     [self.spinner start];
-    [self.apiWrapper enterQueueWithResponseListener:^(int roomID) {
+    [self.apiWrapper enterQueueWithResponseListener:^(NSString *roomID) {
         self.roomID = roomID;
         [self performSegueWithIdentifier:@"toChat" sender:self];
     }];

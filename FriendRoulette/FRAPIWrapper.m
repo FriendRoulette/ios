@@ -8,8 +8,8 @@
 
 #import "FRAPIWrapper.h"
 
-#define BASE_URL @"http://api.friendroulette.net/user/create_oauth"
-#define FIREBASE_BASE_URL @"http://www.friendroulette.firebaseio.com/"
+#define BASE_URL @"http://api.friendroulette.net/user/oauth_create"
+#define FIREBASE_BASE_URL @"https://friendroulette.firebaseio.com/"
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
 
 @interface FRAPIWrapper()
@@ -19,7 +19,7 @@
 
 @implementation FRAPIWrapper
 
-- (void)enterQueueWithResponseListener:(void (^)(int roomID))r{
+- (void)enterQueueWithResponseListener:(void (^)(NSString *roomID))r{
     self.response = r;
     ACAccountStore* as = [ACAccountStore new];
     
@@ -48,7 +48,6 @@
                                      NSString* token = [ac oauthToken];
                                      NSAssert( token.length > 0, @"oops, no credential??" );
                                      
-                                     NSLog( @"token=%@", token );
                                      [self sendRequestWithToken:token];
                                  }
                              }];
@@ -74,46 +73,46 @@
         [array addObject:[NSString stringWithFormat:@"%@=%@", key, valueString]];
     }
     NSString *postString = [array componentsJoinedByString:@"&"];
-    NSLog(@"New2a HTTPPost Data:%@", postString);
     
     return [postString dataUsingEncoding:NSUTF8StringEncoding];
 }
 
 - (void) sendRequestWithToken: (NSString *) token{
-    // Create the request.
-    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:BASE_URL]];
-    NSDictionary *params = @{@"token":token};
+    NSURLSession *session = [NSURLSession sharedSession];
+//    // Create the request.
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:BASE_URL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120000];
+    [request setURL:[NSURL URLWithString:BASE_URL]];
+    NSDictionary *params = @{@"oauth":token};
+    NSLog(@"%@", token);
     NSData *postDataString = [self dataForHTTPPost:params];
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postDataString length]];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postDataString length]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postDataString];
-
-    // Create url connection and fire request
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [conn start];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    self.responseData = [[NSMutableData alloc]init];
-}
-
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [self.responseData appendData:data];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSDictionary *jsonDict = [self jsonToDictionary:self.responseData];
-    
-    NSString *firebaseURLSuffix = [jsonDict objectForKey:@"FIREBASE_URL"];
-    Firebase *fireBase = [[Firebase alloc]initWithUrl:[NSString stringWithFormat:@"%@%@", FIREBASE_BASE_URL, firebaseURLSuffix]];
-    [fireBase observeEventType:FEventTypeValue withBlock:^
-    (FDataSnapshot *snapshot) {
-        if ([(NSNumber *)snapshot.value intValue] != 0)
-            self.response([snapshot.value intValue]);
-    }];
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSDictionary *jsonDict = [self jsonToDictionary:data];
+        NSString *firebaseURLSuffix = [jsonDict objectForKey:@"uid"];
+        NSString *jsonText = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"RESPONSE TEXT %@", jsonText);
+        if ([jsonDict objectForKey:@"status"] == nil) {
+            NSLog(@"SUFFEX %@", firebaseURLSuffix);
+            Firebase *fireBase = [[Firebase alloc]initWithUrl:[NSString stringWithFormat:@"%@%@", FIREBASE_BASE_URL, firebaseURLSuffix]];
+            [fireBase observeEventType:FEventTypeValue withBlock:^
+             (FDataSnapshot *snapshot) {
+                 NSLog(@"%@", snapshot.value);
+                 if (![snapshot.value isEqual:[NSNull null]] && ![(NSString *)snapshot.value isEqualToString:@"null"]) {
+                     self.response((NSString *)snapshot.value);
+                     NSLog(@"IN ROOM! %@", (NSString *)snapshot.value);
+                 }
+             }];
+            NSLog(@"Waiting for FireBase");
+        } else {
+            UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Error" message:@"The server did not respond correctly!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [av show];
+            NSLog(@"Error: status:false");
+        }
+    }] resume];
 }
 
 - (NSDictionary *)jsonToDictionary:(NSData *)json {
@@ -126,11 +125,5 @@
                           error:&error];
     return jsonDict;
 }
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    // The request has failed for some reason!
-    // Check the error var
-}
-
 
 @end
