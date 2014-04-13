@@ -10,6 +10,8 @@
 		3805F49C18F96F0C000F12B4 /* FRChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3805F49B18F96F0C000F12B4 /* FRChatViewController.m */; };
 		380B8B1718F95AFE00015008 /* FRChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B8B1618F95AFE00015008 /* FRChatMessage.m */; };
 		386546EA18F976D5004ACF09 /* FRChatMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386546E918F976D5004ACF09 /* FRChatMessageTableViewCell.m */; };
+		386EF00D18F9F7690080745B /* FRAPIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 386EF00C18F9F7690080745B /* FRAPIWrapper.m */; };
+		386EF00F18F9FF700080745B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386EF00E18F9FF700080745B /* Social.framework */; };
 		3870C88B18F93F4400E26C88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88A18F93F4400E26C88 /* Foundation.framework */; };
 		3870C88D18F93F4400E26C88 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88C18F93F4400E26C88 /* CoreGraphics.framework */; };
 		3870C88F18F93F4400E26C88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88E18F93F4400E26C88 /* UIKit.framework */; };
@@ -24,6 +26,12 @@
 		3870C8AC18F93F4400E26C88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870C88E18F93F4400E26C88 /* UIKit.framework */; };
 		3870C8B418F93F4500E26C88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3870C8B218F93F4500E26C88 /* InfoPlist.strings */; };
 		3870C8B618F93F4500E26C88 /* FriendRouletteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3870C8B518F93F4500E26C88 /* FriendRouletteTests.m */; };
+		3880DA8118FA3DC000D088CE /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DA8018FA3DC000D088CE /* Firebase.framework */; };
+		3880DA8318FA3E8500D088CE /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DA8218FA3E8500D088CE /* libicucore.dylib */; };
+		3880DA8518FA3E8E00D088CE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DA8418FA3E8E00D088CE /* CFNetwork.framework */; };
+		3880DA8718FA3E9800D088CE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DA8618FA3E9800D088CE /* Security.framework */; };
+		3880DA8918FA498200D088CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DA8818FA498200D088CE /* SystemConfiguration.framework */; };
+		3880DA8B18FA49F800D088CE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DA8A18FA49F800D088CE /* libc++.dylib */; };
 		38D8F17518F9CF1A0001C495 /* FRRouletteSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D8F17418F9CF1A0001C495 /* FRRouletteSpinner.m */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +52,9 @@
 		380B8B1618F95AFE00015008 /* FRChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatMessage.m; sourceTree = "<group>"; };
 		386546E818F976D5004ACF09 /* FRChatMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatMessageTableViewCell.h; sourceTree = "<group>"; };
 		386546E918F976D5004ACF09 /* FRChatMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatMessageTableViewCell.m; sourceTree = "<group>"; };
+		386EF00B18F9F7690080745B /* FRAPIWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRAPIWrapper.h; sourceTree = "<group>"; };
+		386EF00C18F9F7690080745B /* FRAPIWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRAPIWrapper.m; sourceTree = "<group>"; };
+		386EF00E18F9FF700080745B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		3870C88718F93F4400E26C88 /* FriendRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3870C88A18F93F4400E26C88 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3870C88C18F93F4400E26C88 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,6 +74,12 @@
 		3870C8B118F93F4500E26C88 /* FriendRouletteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FriendRouletteTests-Info.plist"; sourceTree = "<group>"; };
 		3870C8B318F93F4500E26C88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3870C8B518F93F4500E26C88 /* FriendRouletteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendRouletteTests.m; sourceTree = "<group>"; };
+		3880DA8018FA3DC000D088CE /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		3880DA8218FA3E8500D088CE /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		3880DA8418FA3E8E00D088CE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3880DA8618FA3E9800D088CE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3880DA8818FA498200D088CE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3880DA8A18FA49F800D088CE /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		38D8F17318F9CF1A0001C495 /* FRRouletteSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRRouletteSpinner.h; sourceTree = "<group>"; };
 		38D8F17418F9CF1A0001C495 /* FRRouletteSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRRouletteSpinner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +89,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3880DA8B18FA49F800D088CE /* libc++.dylib in Frameworks */,
+				3880DA8918FA498200D088CE /* SystemConfiguration.framework in Frameworks */,
+				3880DA8718FA3E9800D088CE /* Security.framework in Frameworks */,
+				3880DA8518FA3E8E00D088CE /* CFNetwork.framework in Frameworks */,
+				3880DA8318FA3E8500D088CE /* libicucore.dylib in Frameworks */,
+				3880DA8118FA3DC000D088CE /* Firebase.framework in Frameworks */,
+				386EF00F18F9FF700080745B /* Social.framework in Frameworks */,
 				3870C88D18F93F4400E26C88 /* CoreGraphics.framework in Frameworks */,
 				3870C88F18F93F4400E26C88 /* UIKit.framework in Frameworks */,
 				3870C88B18F93F4400E26C88 /* Foundation.framework in Frameworks */,
@@ -115,6 +139,15 @@
 			name = "Actual Classes";
 			sourceTree = "<group>";
 		};
+		386EF00A18F9F6E80080745B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				386EF00B18F9F7690080745B /* FRAPIWrapper.h */,
+				386EF00C18F9F7690080745B /* FRAPIWrapper.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		3870C87E18F93F4400E26C88 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +170,13 @@
 		3870C88918F93F4400E26C88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3880DA8A18FA49F800D088CE /* libc++.dylib */,
+				3880DA8818FA498200D088CE /* SystemConfiguration.framework */,
+				3880DA8618FA3E9800D088CE /* Security.framework */,
+				3880DA8418FA3E8E00D088CE /* CFNetwork.framework */,
+				3880DA8218FA3E8500D088CE /* libicucore.dylib */,
+				3880DA8018FA3DC000D088CE /* Firebase.framework */,
+				386EF00E18F9FF700080745B /* Social.framework */,
 				3870C88A18F93F4400E26C88 /* Foundation.framework */,
 				3870C88C18F93F4400E26C88 /* CoreGraphics.framework */,
 				3870C88E18F93F4400E26C88 /* UIKit.framework */,
@@ -148,6 +188,7 @@
 		3870C89018F93F4400E26C88 /* FriendRoulette */ = {
 			isa = PBXGroup;
 			children = (
+				386EF00A18F9F6E80080745B /* API */,
 				380B8B1418F9576500015008 /* Actual Classes */,
 				380B8B1318F9575C00015008 /* ViewControllers */,
 				3870C89918F93F4400E26C88 /* FRAppDelegate.h */,
@@ -293,6 +334,7 @@
 				3870C89B18F93F4400E26C88 /* FRAppDelegate.m in Sources */,
 				3870C89718F93F4400E26C88 /* main.m in Sources */,
 				380B8B1718F95AFE00015008 /* FRChatMessage.m in Sources */,
+				386EF00D18F9F7690080745B /* FRAPIWrapper.m in Sources */,
 				38D8F17518F9CF1A0001C495 /* FRRouletteSpinner.m in Sources */,
 				3870C8A118F93F4400E26C88 /* FRLaunchViewController.m in Sources */,
 				386546EA18F976D5004ACF09 /* FRChatMessageTableViewCell.m in Sources */,
@@ -422,9 +464,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/quickblox-ios-sdk-master/Framework",
+					"$(PROJECT_DIR)/Framework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FriendRoulette/FriendRoulette-Prefix.pch";
 				INFOPLIST_FILE = "FriendRoulette/FriendRoulette-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -438,9 +487,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/quickblox-ios-sdk-master/Framework",
+					"$(PROJECT_DIR)/Framework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FriendRoulette/FriendRoulette-Prefix.pch";
 				INFOPLIST_FILE = "FriendRoulette/FriendRoulette-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

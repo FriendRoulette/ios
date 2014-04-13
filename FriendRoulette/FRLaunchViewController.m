@@ -7,8 +7,11 @@
 //
 
 #import "FRLaunchViewController.h"
+#import "FRChatViewController.h"
 
 @interface FRLaunchViewController ()
+
+@property (nonatomic) int roomID;
 
 @end
 
@@ -16,6 +19,7 @@
 
 - (void)viewDidLoad
 {
+    self.apiWrapper = [[FRAPIWrapper alloc] init];
     [super viewDidLoad];
     [self.spinner initialize];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -29,5 +33,16 @@
 
 - (IBAction)findSomeone:(id)sender {
     [self.spinner start];
+    [self.apiWrapper enterQueueWithResponseListener:^(int roomID) {
+        self.roomID = roomID;
+        [self performSegueWithIdentifier:@"toChat" sender:self];
+    }];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"toChat"]) {
+        FRChatViewController *vc = segue.destinationViewController;
+        vc.roomID = self.roomID;
+    }
 }
 @end

@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSMutableArray* chatMessages;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *editText;
+@property (nonatomic) int roomID;
 
 - (IBAction)sendButtonPressed:(UITextField *)sender;
 - (void)sendMessage:(NSString *)message;
