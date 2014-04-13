@@ -12,6 +12,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //Set Quickblox Credentials
+    [QBSettings setApplicationID:9253];
+    [QBSettings setAuthorizationKey:@"j75yUCpEhSP2W-g"];
+    [QBSettings setAuthorizationSecret:@"qScehbcjER7jTcG"];
+    
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.26 green:0.36 blue:0.63 alpha:1]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     //

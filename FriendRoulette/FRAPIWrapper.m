@@ -8,12 +8,13 @@
 
 #import "FRAPIWrapper.h"
 
-#define BASE_URL @"api.friendroulette.net/"
-#define FIREBASE_BASE_URL @"hello/"
+#define BASE_URL @"http://api.friendroulette.net/user/create_oauth"
+#define FIREBASE_BASE_URL @"http://www.friendroulette.firebaseio.com/"
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
 
 @interface FRAPIWrapper()
 - (NSDictionary *)jsonToDictionary:(NSData *)json;
+- (NSData *)dataForHTTPPost:(NSDictionary*) parms;
 @end
 
 @implementation FRAPIWrapper
@@ -54,10 +55,41 @@
 
 }
 
+- (NSData *)dataForHTTPPost:(NSDictionary*) parms
+{
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSString *key in parms) {
+        id obj = [parms objectForKey:key];
+        NSString *valueString;
+        
+        if ([obj isKindOfClass:[NSString class]])
+            valueString = obj;
+        else if ([obj isKindOfClass:[NSNumber class]])
+            valueString = [(NSNumber *)obj stringValue];
+        else if ([obj isKindOfClass:[NSURL class]])
+            valueString = [(NSURL *)obj absoluteString];
+        else
+            valueString = [obj description];
+        
+        [array addObject:[NSString stringWithFormat:@"%@=%@", key, valueString]];
+    }
+    NSString *postString = [array componentsJoinedByString:@"&"];
+    NSLog(@"New2a HTTPPost Data:%@", postString);
+    
+    return [postString dataUsingEncoding:NSUTF8StringEncoding];
+}
+
 - (void) sendRequestWithToken: (NSString *) token{
     // Create the request.
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://api.friendroulette.net/users/find_token?token=%@", token]]];
-    
+    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:BASE_URL]];
+    NSDictionary *params = @{@"token":token};
+    NSData *postDataString = [self dataForHTTPPost:params];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postDataString length]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postDataString];
+
     // Create url connection and fire request
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [conn start];

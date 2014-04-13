@@ -14,6 +14,8 @@
 
 @implementation FRChatViewController
 
+#define FIREBASE_BASE_URL @"hello/"
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,6 +28,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    QBUUser *user = [QBUUser user];
+    user.login = [[NSUUID UUID] UUIDString];
+    user.password = @"asskon";
+    
+    [QBUsers signUp:user delegate:self];
+    
+    
+    [QBChat instance].delegate = self;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
@@ -37,6 +47,23 @@
     
     self.chatMessages = [[NSMutableArray alloc]init];
     
+}
+
+- (void)completedWithResult:(Result *)result{
+    if(result.success && [result isKindOfClass:QBUUserResult.class]){
+        // Success, do something
+        QBUUserResult *userResult = (QBUUserResult *)result;
+        int myId = userResult.user.ID;
+        Firebase *fireBase = [[Firebase alloc]initWithUrl:[NSString stringWithFormat:@"%@room%d", FIREBASE_BASE_URL, self.roomID]];
+        [fireBase observeEventType:FEventTypeChildAdded withBlock:^
+         (FDataSnapshot *snapshot) {
+             for (id child in snapshot.children) {
+                 if ([child intValue] != myId) {
+                     self.recipientID = [child intValue];
+                 }
+             }
+         }];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,10 +121,25 @@
 
 - (void)sendMessage:(NSString *)message {
     if ([message compare:@""] != NSOrderedSame) {
-        FRChatMessage *chatMessage = [FRChatMessage messageWithUser:@"Me" message:message];
-        [self.chatMessages addObject:chatMessage];
+        // send message
+        QBChatMessage *chatMessage = [QBChatMessage message];
+        chatMessage.recipientID = self.recipientID; // opponent's id
+        chatMessage.text = message;
+        [[QBChat instance] sendMessage:chatMessage];
+        
+        FRChatMessage *tableChatMessage = [FRChatMessage messageWithUser:@"Me" message:message];
+        [self.chatMessages addObject:tableChatMessage];
         [self.tableView reloadData];
     }
+}
+
+#pragma mark -
+#pragma mark QBChatDelegate
+
+- (void)chatDidReceiveMessage:(QBChatMessage *)message{
+    FRChatMessage *tableChatMessage = [FRChatMessage messageWithUser:@"Them" message:message.text];
+    [self.chatMessages addObject:tableChatMessage];
+    [self.tableView reloadData];
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

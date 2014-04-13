@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "FRChatMessage.h"
 #import "FRChatMessageTableViewCell.h"
+#import <Firebase/Firebase.h>
 
-@interface FRChatViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface FRChatViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, QBChatDelegate, QBActionStatusDelegate>
 
 @property (strong, nonatomic) NSMutableArray* chatMessages;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *editText;
+@property (nonatomic) int recipientID;
 @property (nonatomic) int roomID;
 
 - (IBAction)sendButtonPressed:(UITextField *)sender;

@@ -32,6 +32,19 @@
 		3880DA8718FA3E9800D088CE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DA8618FA3E9800D088CE /* Security.framework */; };
 		3880DA8918FA498200D088CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DA8818FA498200D088CE /* SystemConfiguration.framework */; };
 		3880DA8B18FA49F800D088CE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DA8A18FA49F800D088CE /* libc++.dylib */; };
+		3880DCFA18FA4BD800D088CE /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DCF918FA4BD800D088CE /* Quickblox.framework */; };
+		3880DCFC18FA4C5C00D088CE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DCFB18FA4C5C00D088CE /* MobileCoreServices.framework */; };
+		3880DCFE18FA4C6C00D088CE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DCFD18FA4C6C00D088CE /* CoreLocation.framework */; };
+		3880DD0018FA4C7300D088CE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DCFF18FA4C7300D088CE /* CoreData.framework */; };
+		3880DD0218FA4C7900D088CE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DD0118FA4C7900D088CE /* AudioToolbox.framework */; };
+		3880DD0418FA4C8300D088CE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DD0318FA4C8300D088CE /* CoreMedia.framework */; };
+		3880DD0618FA4C8E00D088CE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DD0518FA4C8E00D088CE /* Accelerate.framework */; };
+		3880DD0818FA4C9500D088CE /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DD0718FA4C9500D088CE /* CoreVideo.framework */; };
+		3880DD0A18FA4C9D00D088CE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DD0918FA4C9D00D088CE /* AVFoundation.framework */; };
+		3880DD0C18FA4CA600D088CE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DD0B18FA4CA600D088CE /* QuartzCore.framework */; };
+		3880DD0E18FA4CBB00D088CE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DD0D18FA4CBB00D088CE /* libz.dylib */; };
+		3880DD1018FA4CC400D088CE /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DD0F18FA4CC400D088CE /* libresolv.dylib */; };
+		3880DD1218FA4CE200D088CE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3880DD1118FA4CE200D088CE /* libxml2.dylib */; };
 		38D8F17518F9CF1A0001C495 /* FRRouletteSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D8F17418F9CF1A0001C495 /* FRRouletteSpinner.m */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +93,19 @@
 		3880DA8618FA3E9800D088CE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3880DA8818FA498200D088CE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3880DA8A18FA49F800D088CE /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		3880DCF918FA4BD800D088CE /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
+		3880DCFB18FA4C5C00D088CE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3880DCFD18FA4C6C00D088CE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3880DCFF18FA4C7300D088CE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3880DD0118FA4C7900D088CE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3880DD0318FA4C8300D088CE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		3880DD0518FA4C8E00D088CE /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		3880DD0718FA4C9500D088CE /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		3880DD0918FA4C9D00D088CE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3880DD0B18FA4CA600D088CE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3880DD0D18FA4CBB00D088CE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		3880DD0F18FA4CC400D088CE /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
+		3880DD1118FA4CE200D088CE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		38D8F17318F9CF1A0001C495 /* FRRouletteSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRRouletteSpinner.h; sourceTree = "<group>"; };
 		38D8F17418F9CF1A0001C495 /* FRRouletteSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRRouletteSpinner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,14 +115,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3880DA8B18FA49F800D088CE /* libc++.dylib in Frameworks */,
-				3880DA8918FA498200D088CE /* SystemConfiguration.framework in Frameworks */,
+				3880DD1218FA4CE200D088CE /* libxml2.dylib in Frameworks */,
+				3880DD1018FA4CC400D088CE /* libresolv.dylib in Frameworks */,
+				3880DD0E18FA4CBB00D088CE /* libz.dylib in Frameworks */,
 				3880DA8718FA3E9800D088CE /* Security.framework in Frameworks */,
+				3880DD0C18FA4CA600D088CE /* QuartzCore.framework in Frameworks */,
+				3880DD0A18FA4C9D00D088CE /* AVFoundation.framework in Frameworks */,
+				3880DD0818FA4C9500D088CE /* CoreVideo.framework in Frameworks */,
+				3880DD0618FA4C8E00D088CE /* Accelerate.framework in Frameworks */,
+				3880DD0418FA4C8300D088CE /* CoreMedia.framework in Frameworks */,
+				3880DD0218FA4C7900D088CE /* AudioToolbox.framework in Frameworks */,
+				3880DD0018FA4C7300D088CE /* CoreData.framework in Frameworks */,
+				3880DCFE18FA4C6C00D088CE /* CoreLocation.framework in Frameworks */,
+				3870C88D18F93F4400E26C88 /* CoreGraphics.framework in Frameworks */,
+				3880DCFC18FA4C5C00D088CE /* MobileCoreServices.framework in Frameworks */,
+				3880DA8918FA498200D088CE /* SystemConfiguration.framework in Frameworks */,
 				3880DA8518FA3E8E00D088CE /* CFNetwork.framework in Frameworks */,
+				3880DA8B18FA49F800D088CE /* libc++.dylib in Frameworks */,
 				3880DA8318FA3E8500D088CE /* libicucore.dylib in Frameworks */,
+				3880DCFA18FA4BD800D088CE /* Quickblox.framework in Frameworks */,
 				3880DA8118FA3DC000D088CE /* Firebase.framework in Frameworks */,
 				386EF00F18F9FF700080745B /* Social.framework in Frameworks */,
-				3870C88D18F93F4400E26C88 /* CoreGraphics.framework in Frameworks */,
 				3870C88F18F93F4400E26C88 /* UIKit.framework in Frameworks */,
 				3870C88B18F93F4400E26C88 /* Foundation.framework in Frameworks */,
 			);
@@ -170,6 +209,19 @@
 		3870C88918F93F4400E26C88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3880DD1118FA4CE200D088CE /* libxml2.dylib */,
+				3880DD0F18FA4CC400D088CE /* libresolv.dylib */,
+				3880DD0D18FA4CBB00D088CE /* libz.dylib */,
+				3880DD0B18FA4CA600D088CE /* QuartzCore.framework */,
+				3880DD0918FA4C9D00D088CE /* AVFoundation.framework */,
+				3880DD0718FA4C9500D088CE /* CoreVideo.framework */,
+				3880DD0518FA4C8E00D088CE /* Accelerate.framework */,
+				3880DD0318FA4C8300D088CE /* CoreMedia.framework */,
+				3880DD0118FA4C7900D088CE /* AudioToolbox.framework */,
+				3880DCFF18FA4C7300D088CE /* CoreData.framework */,
+				3880DCFD18FA4C6C00D088CE /* CoreLocation.framework */,
+				3880DCFB18FA4C5C00D088CE /* MobileCoreServices.framework */,
+				3880DCF918FA4BD800D088CE /* Quickblox.framework */,
 				3880DA8A18FA49F800D088CE /* libc++.dylib */,
 				3880DA8818FA498200D088CE /* SystemConfiguration.framework */,
 				3880DA8618FA3E9800D088CE /* Security.framework */,
@@ -473,7 +525,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FriendRoulette/FriendRoulette-Prefix.pch";
 				INFOPLIST_FILE = "FriendRoulette/FriendRoulette-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lstdc++",
+					"-lxml2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -496,7 +552,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FriendRoulette/FriendRoulette-Prefix.pch";
 				INFOPLIST_FILE = "FriendRoulette/FriendRoulette-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lstdc++",
+					"-lxml2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
