@@ -11,8 +11,6 @@
 
 @interface FRLaunchViewController ()
 
-@property (nonatomic) int roomID;
-
 @end
 
 @implementation FRLaunchViewController

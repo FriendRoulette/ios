@@ -22,6 +22,7 @@
     //
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     [[UIButton appearance] setTintColor:[UIColor colorWithWhite:0.1 alpha:1]];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
     return YES;
 }
 

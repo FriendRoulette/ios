@@ -9,12 +9,12 @@
 #import "FRChatViewController.h"
 
 @interface FRChatViewController ()
-
+- (void)pushMessage:(NSString *)message;
 @end
 
 @implementation FRChatViewController
 
-#define FIREBASE_BASE_URL @"hello/"
+#define FIREBASE_BASE_URL @"https://friendroulette.firebaseio.com/"
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,42 +28,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    QBUUser *user = [QBUUser user];
-    user.login = [[NSUUID UUID] UUIDString];
-    user.password = @"asskon";
-    
-    [QBUsers signUp:user delegate:self];
-    
-    
-    [QBChat instance].delegate = self;
+    myLastMessage = @"";
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
-    
     [self.view addGestureRecognizer:tap];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     // Do any additional setup after loading the view.
     
-    self.chatMessages = [[NSMutableArray alloc]init];
+    self.fireBase = [[Firebase alloc]initWithUrl:[NSString stringWithFormat:@"%@room%@", FIREBASE_BASE_URL, self.roomID]];
+    [self.fireBase removeValue];
+    [self.fireBase observeEventType:FEventTypeValue withBlock:^
+     (FDataSnapshot *snapshot) {
+         if (![snapshot.value isEqual:[NSNull null]] && (NSString *)snapshot.value != myLastMessage) {
+             [self pushMessage:(NSString *)snapshot.value user:@"Friend"];
+         }
+     }];
     
-}
-
-- (void)completedWithResult:(Result *)result{
-    if(result.success && [result isKindOfClass:QBUUserResult.class]){
-        // Success, do something
-        QBUUserResult *userResult = (QBUUserResult *)result;
-        int myId = userResult.user.ID;
-        Firebase *fireBase = [[Firebase alloc]initWithUrl:[NSString stringWithFormat:@"%@room%d", FIREBASE_BASE_URL, self.roomID]];
-        [fireBase observeEventType:FEventTypeChildAdded withBlock:^
-         (FDataSnapshot *snapshot) {
-             for (id child in snapshot.children) {
-                 if ([child intValue] != myId) {
-                     self.recipientID = [child intValue];
-                 }
-             }
-         }];
-    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,21 +56,19 @@
 
 - (void)keyboardWillShow:(NSNotification *)notification
 {
-    // Get the size of the keyboard.
     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
-    CGRect newTableFrame = self.tableView.frame;
-    CGSize size = newTableFrame.size;
+    CGRect newFrame = self.chatView.frame;
+    CGSize size = newFrame.size;
     size.height -= (keyboardSize.height);
-    newTableFrame.size = size;
+    newFrame.size = size;
     CGRect newInputFrame = self.editText.frame;
     CGPoint point = newInputFrame.origin;
     point.y -= keyboardSize.height;
     newInputFrame.origin = point;
     self.editText.frame = newInputFrame;
-    //Here make adjustments to the tableview frame based on the value in keyboard size
     
-    self.tableView.frame = newTableFrame;
+    self.chatView.frame = newFrame;
 }
 
 -(void)dismissKeyboard {
@@ -97,21 +77,19 @@
 
 
 - (void)keyboardWillHide:(NSNotification *)notification {
-    // Get the size of the keyboard.
     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
-    CGRect newTableFrame = self.tableView.frame;
-    CGSize size = newTableFrame.size;
+    CGRect newFrame = self.chatView.frame;
+    CGSize size = newFrame.size;
     size.height += (keyboardSize.height);
-    newTableFrame.size = size;
+    newFrame.size = size;
     CGRect newInputFrame = self.editText.frame;
     CGPoint point = newInputFrame.origin;
     point.y += keyboardSize.height;
     newInputFrame.origin = point;
     self.editText.frame = newInputFrame;
-    //Here make adjustments to the tableview frame based on the value in keyboard size
     
-    self.tableView.frame = newTableFrame;
+    self.chatView.frame = newFrame;
 }
 
 - (IBAction)sendButtonPressed:(UITextField *)sender {
@@ -122,67 +100,29 @@
 - (void)sendMessage:(NSString *)message {
     if ([message compare:@""] != NSOrderedSame) {
         // send message
-        QBChatMessage *chatMessage = [QBChatMessage message];
-        chatMessage.recipientID = self.recipientID; // opponent's id
-        chatMessage.text = message;
-        [[QBChat instance] sendMessage:chatMessage];
-        
-        FRChatMessage *tableChatMessage = [FRChatMessage messageWithUser:@"Me" message:message];
-        [self.chatMessages addObject:tableChatMessage];
-        [self.tableView reloadData];
+        myLastMessage = message;
+        [self pushMessage:message user:@"Me"];
+        [self.fireBase setValue:message];
     }
+}
+
+- (void)pushMessage:(NSString *)message user:(NSString *)user {
+    self.chatView.text = [NSString stringWithFormat:@"%@\n%@: %@", self.chatView.text, user, message];
+    NSLog(@"PUSHING");
 }
 
 #pragma mark -
 #pragma mark QBChatDelegate
 
-- (void)chatDidReceiveMessage:(QBChatMessage *)message{
-    FRChatMessage *tableChatMessage = [FRChatMessage messageWithUser:@"Them" message:message.text];
-    [self.chatMessages addObject:tableChatMessage];
-    [self.tableView reloadData];
-}
-
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.chatMessages.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
-    
-    FRChatMessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[FRChatMessageTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    
-    cell.speakerLabel.text = [[self.chatMessages objectAtIndex:indexPath.row] user];
-    cell.messageTextView.text = [[self.chatMessages objectAtIndex:indexPath.row] message];
-    [cell.messageTextView sizeToFit];
-    return cell;
-}
-
-#define TEXTVIEW_WIDTH 276
-#define FONT_SIZE 13
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Helvetica Neue" size:FONT_SIZE]};
-    // NSString class method: boundingRectWithSize:options:attributes:context is
-    // available only on ios7.0 sdk.
-    CGRect rect = [[[self.chatMessages objectAtIndex:indexPath.row] message] boundingRectWithSize:CGSizeMake(TEXTVIEW_WIDTH, 10000)
-                                              options:NSStringDrawingUsesLineFragmentOrigin
-                                           attributes:attributes
-                                              context:nil];
-    NSLog(@"%f", rect.size.height);
-    NSLog(@"%@", [[self.chatMessages objectAtIndex:indexPath.row] message]);
-    return rect.size.height + 15;
-                                                                                                              
-}
 
 - (void)viewWillDisappear:(BOOL)animated {
-    Firebase *fireBase = [[Firebase alloc]initWithUrl:[NSString stringWithFormat:@"%@room%d", FIREBASE_BASE_URL, self.roomID]];
-    [fireBase removeValue];
+    self.fireBase = [[Firebase alloc]initWithUrl:[NSString stringWithFormat:@"%@room%@", FIREBASE_BASE_URL, self.roomID]];
+    [self.fireBase removeValue];
 }
 
+-(BOOL) textFieldShouldEndEditing:(UITextField *)textField {
+    return NO;
+}
 /*
 #pragma mark - Navigation
 

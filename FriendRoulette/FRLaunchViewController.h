@@ -13,6 +13,7 @@
 @interface FRLaunchViewController : UIViewController
 @property (weak, nonatomic) IBOutlet FRRouletteSpinner *spinner;
 @property (strong, nonatomic) FRAPIWrapper *apiWrapper;
+@property (strong, nonatomic) NSString *roomID;
 
 - (IBAction)findSomeone:(id)sender;
 
